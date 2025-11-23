@@ -51,7 +51,8 @@ app.get('/api/books', (req, res) => {
 // Your existing MongoDB connection code...
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    // MONGODB_URI
+    await mongoose.connect(process.env.MONGO_URI);
     console.log('✅ MongoDB Connected!');
     
     const PORT = process.env.PORT || 5555;
