@@ -7,16 +7,30 @@ dotenv.config();
 
 const app = express();
 
-// ✅ UPDATE CORS - Add this
+// // ✅ UPDATE CORS - Add this
+// app.use(cors({
+//   origin: [
+//     'http://localhost:5174',  // Your current frontend port
+//     'http://localhost:5173',  // Default Vite port  
+//     'http://localhost:3000',  // Common React port
+//     'https://book-store-production-be0d.up.railway.app' // Your backend itself
+//   ],
+//   credentials: true
+// }));
+
+
 app.use(cors({
   origin: [
-    'http://localhost:5174',  // Your current frontend port
-    'http://localhost:5173',  // Default Vite port  
-    'http://localhost:3000',  // Common React port
-    'https://book-store-production-be0d.up.railway.app' // Your backend itself
+    // 'https://your-actual-netlify-url.netlify.app', // Replace with your actual Netlify URL
+    'medical-books-store.netlify.app', // Replace with your actual Netlify URL
+    'http://localhost:5174',
+    'http://localhost:5173', 
+    'http://localhost:3000',
+    'https://book-store-production-be0d.up.railway.app'
   ],
   credentials: true
 }));
+
 
 app.use(express.json());
 
